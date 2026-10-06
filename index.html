@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agung Gunadi - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        h1, h2, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Efek hover dan tekan */
+        .glass-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(20, 184, 166, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(20, 184, 166, 0.1);
+        }
+        .glass-card:active {
+            transform: scale(0.97);
+        }
+        /* Animasi pop up modal */
+        @keyframes modalShow {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .animate-pop {
+            animation: modalShow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-teal-500 selection:text-white relative min-h-screen overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 glass-card px-8 py-4 flex justify-between items-center bg-slate-900/80">
+        <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full border border-teal-500 flex items-center justify-center text-teal-400 font-bold">AG</div>
+            <span class="font-semibold tracking-wide">Agung Gunadi</span>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm text-slate-300">
+            <span class="text-teal-400">MAHASISWA FISIKA - UPI</span>
+            <span>LONGLIFE LEARNER</span>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-20 space-y-32">
+        
+        <!-- 01 / TENTANG -->
+        <section id="tentang" class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8">
+                <p class="text-teal-400 text-sm tracking-widest">01 / TENTANG</p>
+                <h1 class="text-5xl md:text-7xl leading-tight">
+                    Belajar untuk memahami, <br> <span class="italic text-teal-300">bertumbuh bersama.</span>
+                </h1>
+                <div class="grid md:grid-cols-2 gap-8 text-slate-300 text-sm md:text-base leading-relaxed">
+                    <p>Saya mahasiswa Fisika di Universitas Pendidikan Indonesia yang percaya bahwa setiap tujuan besar dimulai dengan keberanian untuk mencoba.</p>
+                    <p>Sebagai pembelajar, saya aktif mengasah kemampuan komunikasi dan kepemimpinan—baik di ruang kelas maupun organisasi seperti Klub Olimpiade HMF FPMIPA UPI dan Rumah Prestasi.</p>
+                </div>
+            </div>
+            
+            <!-- FOTO DI KANAN -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="relative group">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-teal-500 to-indigo-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                    <img src="foto.jpg" alt="Agung Gunadi" 
+                         class="relative rounded-2xl border-2 border-teal-500/20 object-cover w-72 h-96 lg:w-80 lg:h-[420px] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                         onerror="this.src='https://via.placeholder.com/320x420/1e293b/e2e8f0?text=Agung+Gunadi'; console.warn('Foto tidak ditemukan, pastikan file foto Anda bernama foto.png dalam folder yang sama.');">
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 / PENGALAMAN & PRESTASI -->
+        <section id="perjalanan">
+            <p class="text-teal-400 text-sm tracking-widest mb-4">02 / PILIHAN PERJALANAN</p>
+            <h2 class="text-5xl md:text-6xl mb-12">Belajar lewat <span class="italic text-teal-300">mengerjakan.</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Card 1 (Teks diubah ke storytelling) -->
+                <div class="glass-card p-8 rounded-2xl" onclick="showPopup('DIMAS-TI AMLI 2025', 'JUARA 1 · NOV 2025', 'Saya memimpin tim &quot;October Rain&quot; sebagai ketua dalam kompetisi storytelling berbasis STEAM tingkat nasional yang diselenggarakan oleh Asosiasi MIPA LPTK Indonesia & UNESA. Di sini kami menyusun narasi kreatif untuk mempermudah pemahaman konsep sains.')">
+                    <p class="text-xs text-teal-400 mb-2">JUARA 1 · NOV 2025</p>
+                    <h3 class="text-2xl font-semibold mb-3 text-slate-100">DIMAS-TI AMLI 2025</h3>
+                    <p class="text-slate-400 text-sm">Ketua tim "October Rain" dalam kompetisi storytelling STEAM nasional yang diselenggarakan oleh Asosiasi MIPA LPTK Indonesia.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl" onclick="showPopup('OSN Fisika Kabupaten Lebak', 'MEDALI PERAK · MAR 2024', 'Meraih prestasi gemilang sebagai juara ke-2 (Medali Perak) dalam Olimpiade Sains Nasional (OSN) Fisika di tingkat Kabupaten Lebak, yang sekaligus mengantarkan saya menjadi finalis resmi untuk berkompetisi di tingkat Provinsi Banten.')">
+                    <p class="text-xs text-teal-400 mb-2">MEDALI PERAK · MAR 2024</p>
+                    <h3 class="text-2xl font-semibold mb-3 text-slate-100">OSN Fisika Kabupaten Lebak</h3>
+                    <p class="text-slate-400 text-sm">Meraih juara kedua pada Olimpiade Sains Nasional tingkat kabupaten dan menjadi finalis di tingkat Provinsi Banten.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 / BEKAL UNTUK ESOK -->
+        <section id="bekal">
+            <p class="text-teal-400 text-sm tracking-widest mb-4">03 / BEKAL UNTUK ESOK</p>
+            <div class="grid md:grid-cols-2 gap-16">
+                
+                <!-- Kiri: Pendidikan -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">🎓 Pendidikan</h3>
+                    <div class="space-y-6 relative border-l border-slate-700 ml-3 pl-6">
+                        <div class="glass-card p-4 rounded-xl relative" onclick="showPopup('Universitas Pendidikan Indonesia', 'AUG 2025 - 2028', 'Sebagai mahasiswa jurusan Fisika dengan IPK 3.80/4.00, saya aktif mengulik keilmuan fisika murni serta penerapannya. Terlibat dalam berbagai program akademik dan lingkungan eksperimental di kampus.')">
+                            <div class="absolute -left-[31px] top-5 w-3 h-3 bg-teal-500 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-xs text-teal-400 mb-1">AUG 2025 - 2028</p>
+                            <h4 class="text-lg font-semibold text-slate-100">Universitas Pendidikan Indonesia</h4>
+                            <p class="text-sm text-slate-400">Fisika · IPK: 3.80/4.00</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl relative" onclick="showPopup('SMAN 1 Cilograng', 'JUL 2022 - MEI 2025', 'Menyelesaikan pendidikan menengah atas di jurusan IPA dengan capaian akademik yang luar biasa (Nilai: 96.4/100). Aktif dalam berbagai kepengurusan ekstrakurikuler serta kegiatan sains sekolah.')">
+                            <div class="absolute -left-[31px] top-5 w-3 h-3 bg-slate-600 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-xs text-teal-400 mb-1">JUL 2022 - MEI 2025</p>
+                            <h4 class="text-lg font-semibold text-slate-100">SMAN 1 Cilograng</h4>
+                            <p class="text-sm text-slate-400">Ilmu Pengetahuan Alam · Nilai: 96.4/100</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanan: Pengalaman -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">💼 Pengalaman Organisasi</h3>
+                    <div class="space-y-6 relative border-l border-slate-700 ml-3 pl-6">
+                        <div class="glass-card p-4 rounded-xl relative" onclick="showPopup('Ketua Klub Olimpiade', 'HMF FPMIPA UPI', 'Memimpin, merancang kurikulum pembinaan, serta berkolaborasi dengan dosen pembimbing untuk mempersiapkan mahasiswa berprestasi di kancah olimpiade sains (ONMIPA).')">
+                            <div class="absolute -left-[31px] top-5 w-3 h-3 bg-teal-500 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-xs text-teal-400 mb-1">JUN 2026 - SAAT INI</p>
+                            <h4 class="text-lg font-semibold text-slate-100">Ketua Klub Olimpiade</h4>
+                            <p class="text-sm text-slate-400">HMF FPMIPA UPI</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl relative" onclick="showPopup('Koordinator Divisi OPTINUS', 'KBK Pendidikan Fisika 2026', 'Mengatur kelancaran operasional, logistik, dan pengelolaan dana bersama tim, serta mendukung terselenggaranya berbagai pelatihan teknis selama kegiatan berlangsung.')">
+                            <div class="absolute -left-[31px] top-5 w-3 h-3 bg-slate-600 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-xs text-teal-400 mb-1">APR 2026 - JUL 2026</p>
+                            <h4 class="text-lg font-semibold text-slate-100">Koordinator Divisi OPTINUS</h4>
+                            <p class="text-sm text-slate-400">KBK Pendidikan Fisika 2026</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl relative" onclick="showPopup('Staff Riset dan Kreativitas', 'Rumah Prestasi FPMIPA UPI', 'Menjalankan program-program PKM, riset terapan mahasiswa, serta memfasilitasi publikasi ide inovatif serta kompetisi di lingkungan FPMIPA.')">
+                            <div class="absolute -left-[31px] top-5 w-3 h-3 bg-slate-600 rounded-full border-4 border-slate-900"></div>
+                            <p class="text-xs text-teal-400 mb-1">MEI 2026 - SAAT INI</p>
+                            <h4 class="text-lg font-semibold text-slate-100">Staff Riset dan Kreativitas</h4>
+                            <p class="text-sm text-slate-400">Rumah Prestasi FPMIPA UPI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 / HAL YANG INGIN DIPELAJARI -->
+        <section id="minat">
+            <p class="text-teal-400 text-sm tracking-widest mb-4">04 / HAL YANG INGIN DIPELAJARI</p>
+            <h2 class="text-5xl md:text-6xl mb-12">Sains dekat dengan <span class="italic text-teal-300">kehidupan.</span></h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card p-8 rounded-2xl" onclick="showPopup('Instrumentasi', 'BIDANG MINAT / 01', 'Fokus pada rancang bangun alat ukur fisis, otomatisasi data, serta bagaimana teknologi modern membantu memvalidasi teori-teori fisika di kehidupan nyata.')">
+                    <p class="text-xs text-slate-400 mb-2">BIDANG MINAT / 01</p>
+                    <h3 class="text-2xl font-semibold mb-3 text-slate-100">Instrumentasi</h3>
+                    <p class="text-slate-400 text-sm">Ketertarikan pada bagaimana pengukuran membantu fenomena fisika diamati dan dipahami.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl" onclick="showPopup('Fisika Medis', 'BIDANG MINAT / 02', 'Mempelajari pemanfaatan radiasi, pencitraan medis (MRI, CT Scan), dan biomekanika untuk diagnosis serta terapi dalam dunia kesehatan modern.')">
+                    <p class="text-xs text-slate-400 mb-2">BIDANG MINAT / 02</p>
+                    <h3 class="text-2xl font-semibold mb-3 text-slate-100">Fisika Medis</h3>
+                    <p class="text-slate-400 text-sm">Ruang temu fisika dan kesehatan yang ingin saya pelajari lebih jauh.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- 05 / TERHUBUNG -->
+        <section id="terhubung" class="text-center py-20 border-t border-slate-800">
+            <p class="text-teal-400 text-sm tracking-widest mb-4">05 / TERHUBUNG</p>
+            <h2 class="text-5xl md:text-7xl mb-8">Mari bertukar <span class="italic text-teal-300">gagasan.</span></h2>
+            <p class="text-slate-400 max-w-lg mx-auto mb-10">Terhubung dan berbincang tentang fisika, pendidikan, atau hal-hal baru untuk dipelajari.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- Tombol LinkedIn -->
+                <a href="https://www.linkedin.com/in/agung-gunadi-a52697355/" target="_blank" 
+                   class="inline-block bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold py-3 px-8 rounded-full transition-all duration-300 transform active:scale-95 hover:shadow-lg hover:shadow-teal-500/20"
+                   onclick="showPopup('Membuka LinkedIn', 'Sosial Media', 'Anda akan diarahkan ke profil LinkedIn resmi Agung Gunadi untuk berjejaring profesional.')">
+                    LinkedIn ↗
+                </a>
+
+                <!-- Tombol Instagram -->
+                <a href="https://www.instagram.com/_agnggnd?stkn=bDcyMWdybHppaDdm" target="_blank" 
+                   class="inline-block bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform active:scale-95 hover:shadow-lg hover:shadow-pink-500/20"
+                   onclick="showPopup('Membuka Instagram', 'Sosial Media', 'Mari terhubung dan berinteraksi lebih kasual melalui Instagram @_agnggnd.')">
+                    Instagram ↗
+                </a>
+
+                <!-- Tombol WhatsApp -->
+                <a href="https://wa.me/6285793730492" target="_blank" 
+                   class="inline-block bg-green-500 hover:bg-green-400 text-slate-900 font-semibold py-3 px-8 rounded-full transition-all duration-300 transform active:scale-95 hover:shadow-lg hover:shadow-green-500/20"
+                   onclick="showPopup('Membuka WhatsApp', 'Kontak Langsung', 'Anda akan diarahkan langsung ke ruang obrolan WhatsApp untuk berdiskusi lebih lanjut.')">
+                    WhatsApp ↗
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- POP-UP MODAL (INTERAKTIF) -->
+    <div id="popupModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center z-[100] px-4 opacity-0 transition-opacity duration-300" onclick="closePopupOnOut(event)">
+        <div id="popupContent" class="glass-card p-8 max-w-lg w-full rounded-2xl bg-slate-900 border-teal-500/40 shadow-2xl relative animate-pop" onclick="event.stopPropagation()">
+            <!-- Tombol Close (X) -->
+            <button onclick="closePopup()" class="absolute top-4 right-4 text-slate-400 hover:text-white focus:outline-none transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <span id="modalTag" class="text-xs text-teal-400 font-bold uppercase tracking-widest block mb-1">Kategori</span>
+            <h3 id="modalTitle" class="text-2xl md:text-3xl font-serif text-slate-100 mb-4">Judul Detail</h3>
+            <p id="modalDesc" class="text-slate-300 text-sm md:text-base leading-relaxed">Penjelasan mendalam...</p>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closePopup()" class="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold py-2 px-6 rounded-lg transition-colors text-sm">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUDIO JIKA DIPERLUKAN (EFEK KLIK RINGAN) -->
+    <script>
+        // Membuka Pop-up & Animasi
+        function showPopup(title, tag, description) {
+            const modal = document.getElementById('popupModal');
+            const content = document.getElementById('popupContent');
+            
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalTag').innerText = tag;
+            document.getElementById('modalDesc').innerText = description;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger Fade-in & Scale Animation
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        // Menutup Pop-up
+        function closePopup() {
+            const modal = document.getElementById('popupModal');
+            modal.classList.add('opacity-0');
+            
+            // Tunggu animasi fade-out selesai baru hide
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        // Tutup jika klik area kosong (luar modal)
+        function closePopupOnOut(event) {
+            if (event.target === document.getElementById('popupModal')) {
+                closePopup();
+            }
+        }
+    </script>
+
+</body>
+</html>
